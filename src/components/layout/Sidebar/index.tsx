@@ -7,10 +7,15 @@ import {
   ProfileIcon,
   SearchIcon,
 } from "@/assets/icons";
-import { IMenuInfo, NameIconType } from "@/types/layout";
+import { IMenuInfo, IMenuObject, NameIconType } from "@/types/layout";
 import { LayoutContext } from "../context";
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
+import { FilesMenu } from "../Menu/Files";
+import { SearchMenu } from "../Menu/Search";
+import { BranchMenu } from "../Menu/Branch";
+import { DebugMenu } from "../Menu/Debug";
+import { ExtensionsMenu } from "../Menu/Extensions";
 
 export const Sidebar = () => {
   const { push } = useRouter();
@@ -67,6 +72,16 @@ export const Sidebar = () => {
     },
   ];
 
+  const menu: IMenuObject = {
+    files: <FilesMenu />,
+    search: <SearchMenu />,
+    branch: <BranchMenu />,
+    debug: <DebugMenu />,
+    extensions: <ExtensionsMenu />,
+    profile: <FilesMenu />,
+    configurations: <FilesMenu />,
+  };
+
   return (
     <nav className="fixed w-sidebar flex top-0 left-0 h-sidebar bg-base-16">
       <section className="flex flex-col justify-between items-center">
@@ -107,7 +122,7 @@ export const Sidebar = () => {
           })}
         </ul>
       </section>
-      <section className="w-300px bg-base-19"></section>
+      {menu[iconSelected]}
     </nav>
   );
 };
