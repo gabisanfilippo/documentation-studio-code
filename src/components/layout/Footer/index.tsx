@@ -9,19 +9,21 @@ import {
   Synchronous,
 } from "@/assets/icons";
 import { IChildren } from "@/types/common";
+import { useRouter } from "next/router";
 
 const TextContainer = ({ children }: IChildren) => {
   return <li className="px-4 flex items-center gap-1">{children}</li>;
 };
 
 export const Footer = () => {
+  const { pathname } = useRouter();
+
   return (
     <footer className="fixed bottom-0 left-0 w-screen h-5 bg-blue-06 text-xs flex justify-between items-center text-base-01">
       <ul className="flex items-center">
         <TextContainer>
           <BranchIcon />
-          {/* TODO: route name as branch */}
-          <p>main</p>
+          <p>{pathname === "/" ? "main" : pathname}</p>
         </TextContainer>
         <TextContainer>
           <Synchronous />
