@@ -1,4 +1,4 @@
-import { IChildren } from "@/types/commom";
+import { IChildren } from "@/types/common";
 import { ILayoutContext, NameIconType } from "@/types/layout";
 import { createContext, useState } from "react";
 
