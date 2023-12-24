@@ -19,3 +19,7 @@ interface IMenuInfo {
   path: string;
   name: NameIconType;
 }
+
+type IMenuObject = {
+  [key in NameIconType]: ReactNode;
+};
