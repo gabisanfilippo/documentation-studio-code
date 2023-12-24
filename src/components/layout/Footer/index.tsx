@@ -8,9 +8,9 @@ import {
   PersonDialogBoxIcon,
   Synchronous,
 } from "@/assets/icons";
-import { ReactNode } from "react";
+import { IChildren } from "@/types/common";
 
-const TextContainer = ({ children }: { children: ReactNode }) => {
+const TextContainer = ({ children }: IChildren) => {
   return <li className="px-4 flex items-center gap-1">{children}</li>;
 };
 
