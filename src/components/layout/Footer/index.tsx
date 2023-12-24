@@ -6,7 +6,7 @@ import {
   ErrorIcon,
   NotificationIcon,
   PersonDialogBoxIcon,
-  Synchronous,
+  SynchronousIcon,
 } from "@/assets/icons";
 import { IChildren } from "@/types/common";
 import { useRouter } from "next/router";
@@ -26,7 +26,7 @@ export const Footer = () => {
           <p>{pathname === "/" ? "main" : pathname}</p>
         </TextContainer>
         <TextContainer>
-          <Synchronous />
+          <SynchronousIcon />
           <p className="ml-1">0</p>
           <ArrowDownIcon />
           <p>1</p>
