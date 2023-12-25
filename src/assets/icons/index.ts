@@ -13,3 +13,4 @@ export * from "./Profile";
 export * from "./Configurations";
 export * from "./Menu";
 export * from "./List";
+export * from "./Close";
